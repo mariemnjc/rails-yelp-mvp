@@ -1,0 +1,14 @@
+<%= simple_form_for [@restaurant, @review] do |f| %>
+<div class="form-inputs">
+  <%= f.input :rating, collection: (0..5)%>
+  <%= f.input :content %>
+</div>
+
+ <div class="form-actions">
+  <%= f.button :submit %>
+ </div>
+<% end %>
+
+<div>
+<%= link_to "Back to the list", restaurant_path(@restaurant) %>
+</div>

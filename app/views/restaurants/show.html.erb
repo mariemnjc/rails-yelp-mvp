@@ -4,4 +4,13 @@
 <li><p>Phone number : <%= @restaurant.phone_number %></p></li>
 <li><p>Address: <%= @restaurant.address %></p></li>
 </ul>
+
+<p><strong>Check our customer reviews </strong></p>
+  <% @restaurant.reviews.each do |review| %>
+    <li><%= review.rating %> - <%= review.content %></li>
+  <% end %>
+<br>
+<br>
+<p><%= link_to "Add a review", new_restaurant_review_path(@restaurant) %></p>
+<br>
 <p><%= link_to "Back to the list", restaurants_path %></p>
